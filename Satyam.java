@@ -1,71 +1,34 @@
-public class Satyam {
+static int dixit = 10;
 
-    // Constructor - Called when we instantiate a class
-    Satyam()
+public static int Recursion(int a, int depth)
+{
+    int newA = a + 1;
+    int newA2 = 0;
+    System.out.println("First Print: " + newA + " Depth: " + depth);
+
+    depth --;
+    if(depth >= 0)
     {
-        inStr = "Dixit";
-        System.out.println("Construct");
+        // newA = 2
+        // depth = 0
+        newA2 = Recursion(newA, depth);
+
+        // int _newA = newA + 1;
+        // int _newA2 = 0;
+        // depth -- ; // -1
+        // if(depth >= 0){} // depth is already -1
+        // newA2 = _newA;
     }
 
-    public String inStr = "Cool";
-    public String inStr2 = "No Change";
-
-    public int Sum(int a , int b)
-    {
-        return a + b;
-    }
-
-    public float Multiply(float a, float b)
-    {
-        return a * b;
-    }
+    System.out.println("Second Print: newA2: " + newA2 + " || A: " + newA);
+    return newA;
 }
 
-public void main(String args[]) {
+public static void main(String args[]) {
 
-    int[][] a = 
-    {
-        {2,4},
-        {5,6}
-    };
-    a[0][1] = 11;
-    System.out.println(a[0][1]);
+    System.out.println(dixit);
 
-    int[][] matrix = 
-    {
-        {1,6,7,8},
-        {22,1,0,9},
-        {33,44,1,67},
-        {11,34,66,1}
-    };
-
-    int[] mm = 
-    {
-        1,6,7,8,
-        22,1,0,9,
-        33,44,1,67,
-        11,34,66,1
-    };
-
-    System.out.println(matrix[0][0]);
-    System.out.println(matrix[3][0]);
-    System.out.println(matrix[0][3]);
-    System.out.println(matrix[1][2]);
-    System.out.println(matrix[2][2]);
-
-
-    // Satyam sat = new Satyam(); // This calls the constructor
-    // System.out.println(sat.inStr + " " + sat.inStr2);
-
-    // Satyam sat2 = new Satyam();// This calls the constructor
-    // sat2.inStr2 = "Vah Vah";
-    // System.out.println(sat.inStr2 + " " + sat2.inStr2);
-    // System.out.println(sat2.Sum(4, 3) + "  " + sat2.Multiply(4,20));
-
-
-    // if (5 > 4) {
-    //     System.out.println("null");
-    // }
+    Recursion(1, 1);
 }
 
 
